@@ -91,7 +91,9 @@ const registeruser = async (req, res, next) => {
 
       const options={
         httpOnly:true,
-        secure:false
+        secure: true,        // REQUIRED: Tells browser the connection is HTTPS
+        sameSite: "none"     // REQUIRED: Allows Netlify and Render to share the cookie
+        
       }
 
       return res.status(200).cookie("cookedaccesstoken",accessToken,options)
@@ -109,7 +111,8 @@ const registeruser = async (req, res, next) => {
       await User.findByIdAndUpdate(req.objuser._id,{ $set:{refreshtoken:1}},{new:true});
       const options={
         httpOnly:true,
-        secure:false
+        secure: true,        // REQUIRED: Tells browser the connection is HTTPS
+        sameSite: "none"     // REQUIRED: Allows Netlify and Render to share the cookie
       }
 
       return res.status(200)
@@ -371,7 +374,8 @@ const registeruser = async (req, res, next) => {
   
       const options = {
         httpOnly: true,
-        secure: true
+        secure: true,        // REQUIRED: Tells browser the connection is HTTPS
+        sameSite: "none"     // REQUIRED: Allows Netlify and Render to share the cookie
       };
   
       return res.status(200)
