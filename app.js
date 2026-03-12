@@ -10,7 +10,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:3000", 
-    "https://notenestnote.netlify.app/" // Replace this when you get your real link!
+    "https://notenestnote.netlify.app" // Replace this when you get your real link!
   ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"]
