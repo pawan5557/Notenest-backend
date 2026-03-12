@@ -1,0 +1,8 @@
+# Ignore the massive folder of downloaded packages
+node_modules/
+
+# Ignore our secret environment variables!
+.env
+
+# Ignore random system files
+.DS_Store
