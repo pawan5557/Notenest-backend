@@ -23,5 +23,10 @@ router_variable.route("/updatepassword").put(verifyjwt,updatepassword)
 
 router_variable.route("/updateuser").put(verifyjwt, updateuser)
 
+// A simple dummy route to wake up the Render server
+router_variable.get("/wakeup", (req, res) => {
+    return res.status(200).json({ message: "Server is awake and ready!" });
+});
+
 
 export {router_variable}
